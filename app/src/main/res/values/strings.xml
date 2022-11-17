@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lab2Exercise2</string>
+
+    <string name="toppings"><b>Choose Toppings:</b></string>
+    <string name="cream">Cream</string>
+    <string name="Chocolate">Chocolate</string>
+    <string name="count"><b>Quantity</b></string>
+    <string name="order_text">ORDER</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="whipped_choice">Add whipped cream? </string>
+    <string name="chocolate_choice">Add chocolate? </string>
+    <string name="quantity">Quantity: </string>
+    <string name="price">Price: </string>
+    <string name="dollar_sign">$</string>
+    <string name="thank_you">THANK YOU!</string>
+</resources>

@@ -6,6 +6,7 @@
     <string name="Chocolate">Chocolate</string>
     <string name="count"><b>Quantity</b></string>
     <string name="order_text">ORDER</string>
+    <string name="order_summary">ORDER SUMMARY</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="whipped_choice">Add whipped cream? </string>

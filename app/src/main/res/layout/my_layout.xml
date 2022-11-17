@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView1"
+        android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/coffee2b" />
 
@@ -23,7 +24,8 @@
         android:id="@+id/textView1"
         android:layout_marginTop="25dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/toppings" />
+        android:text="@string/toppings"
+        android:textColor="@color/black" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -37,13 +39,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cream"
-            android:text="@string/cream" />
+            android:text="@string/cream"
+            android:textColor="@color/black"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/chocolate"
-            android:text="@string/Chocolate" />
+            android:text="@string/Chocolate"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <TextView
@@ -51,15 +55,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quantity"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@id/linear1"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linear2"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textView2" >
 
@@ -67,6 +73,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="-"
+            android:textColor="@color/white"
             android:id="@+id/minus_btn" />
 
         <TextView
@@ -75,6 +82,7 @@
             android:text="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:textColor="@color/black"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/coffee_count" />
 
@@ -82,6 +90,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="+"
+            android:textColor="@color/white"
             android:id="@+id/plus_btn" />
     </LinearLayout>
 
@@ -92,15 +101,17 @@
         android:id="@+id/order_button"
         android:layout_below="@id/linear2"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
         android:layout_marginTop="10dp" />
 
     <TextView
         android:id="@+id/summary_text"
         android:layout_below="@id/order_button"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/order_summary"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -109,5 +120,6 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

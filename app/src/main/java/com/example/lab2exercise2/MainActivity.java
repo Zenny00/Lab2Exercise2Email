@@ -2,10 +2,13 @@ package com.example.lab2exercise2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox hasCream;
     private CheckBox hasChocolate;
+
+    private EditText emailET;
+    private EditText subjectET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,28 +62,64 @@ public class MainActivity extends AppCompatActivity {
 
         hasCream = (CheckBox) findViewById(R.id.cream);
         hasChocolate = (CheckBox) findViewById(R.id.chocolate);
+
+        emailET = (EditText) findViewById(R.id.email_edit);
+        subjectET = (EditText) findViewById(R.id.subject_edit);
     }
 
     //Increase listener
     private OnClickListener orderListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
-            String cream;
-            String chocolate;
+            //Set the text to display the order
+            String order = getOrder();
+            order_summary.setText(order);
 
-            if (coffee.getHasCream())
-                cream = "yes";
-            else
-                cream = "no";
+            //Get email and subject strings
+            String email = emailET.getText().toString();
+            String subject = subjectET.getText().toString();
 
-            if (coffee.getHasChocolate())
-                chocolate = "yes";
-            else
-                chocolate = "no";
+            //Create a new intent for sending the email
+            //This will allow email apps to use the intent
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setData(Uri.parse("mailto:"));
+            intent.setType("message/rfc822");
 
-            order_summary.setText("Add whipped cream? " + cream + "\n" + "Add chocolate? " + chocolate + "\n" + "Quantity " + String.valueOf(coffee.getQuantity()) + "\n\n" + "Price: $" + String.format("%.2f", coffee.getCost()) + "\n" + "THANK YOU!");
+            //Add email addresses
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+            //Add email subject
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            //Email body
+            intent.putExtra(Intent.EXTRA_TEXT, getOrder());
+
+            //If there exists an application to send the email use it
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         }
     };
+
+    private String getOrder()
+    {
+        //Local variables to hold the values of cream and chocolate
+        String cream;
+        String chocolate;
+
+        //Check if the user selected cream
+        if (coffee.getHasCream())
+            cream = "yes";
+        else
+            cream = "no";
+
+        //Check if the user selected chocolate
+        if (coffee.getHasChocolate())
+            chocolate = "yes";
+        else
+            chocolate = "no";
+
+        //Return the order summary
+        return "Add whipped cream? " + cream + "\n" + "Add chocolate? " + chocolate + "\n" + "Quantity " + String.valueOf(coffee.getQuantity()) + "\n\n" + "Price: $" + String.format("%.2f", coffee.getCost()) + "\n" + "THANK YOU!";
+    }
 
     //Increase listener
     private OnClickListener increaseListener = new OnClickListener() {

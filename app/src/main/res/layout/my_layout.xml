@@ -50,13 +50,63 @@
             android:textColor="@color/black"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linear3"
+        android:layout_below="@id/linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/email" />
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            android:layout_toRightOf="@id/email" />
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:shadowColor="@color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/subject" />
+
+        <EditText
+            android:id="@+id/subject_edit"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            android:layout_toRightOf="@id/subject" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quantity"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/linear1"
+        android:layout_below="@id/linear3"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textAppearance="?android:attr/textAppearanceMedium" />
